@@ -326,6 +326,97 @@ img {
     gap: 30px;
 }
 
+/* Product controls (items-per-page dropdown) */
+.product-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.product-controls label {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.product-controls option{
+    color: black;
+}
+
+#items-per-page {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--white);
+    padding: 8px 36px 8px 12px;
+    border-radius: 8px;
+    font-family: var(--font-main);
+    cursor: pointer;
+    transition: var(--transition);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' viewBox='0 0 8 5'%3E%3Cpath fill='%23ffffff' d='M0 0l4 5 4-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+#items-per-page:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 18px rgba(212, 175, 55, 0.08);
+}
+
+@media (max-width: 768px) {
+    .product-controls {
+        justify-content: flex-start;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    #items-per-page {
+        width: 120px;
+    }
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pagination-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-muted);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    font-family: var(--font-main);
+}
+
+.pagination-btn:hover,
+.pagination-btn.active {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
 .product-card {
     background-color: var(--secondary-color);
     border-radius: 15px;
