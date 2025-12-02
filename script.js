@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cart = window.cart = {
         items: JSON.parse(localStorage.getItem('luxeCart')) || [],
 
-        save() {
+        save(shouldRender = true) {
             localStorage.setItem('luxeCart', JSON.stringify(this.items));
             this.updateCount();
             this.render();
@@ -55,24 +55,39 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 this.items.push({ ...product, quantity: 1 });
             }
-            this.save();
+            this.save(false); // Save without re-rendering everything immediately
         },
 
         remove(id) {
-            this.items = this.items.filter(item => item.id !== id);
+            this.items = this.items.filter(item => item.id !== parseInt(id));
             this.save();
         },
 
-        updateQuantity(id, change) {
-            const item = this.items.find(item => item.id === id);
+        increment(id) {
+            const parsedId = parseInt(id);
+            const item = this.items.find(item => item.id === parsedId);
             if (item) {
-                item.quantity += change;
+                item.quantity++;
+                this.save();
+            }
+        },
+
+        decrement(id) {
+            const parsedId = parseInt(id);
+            const item = this.items.find(item => item.id === parsedId);
+            if (item) {
+                item.quantity--;
                 if (item.quantity <= 0) {
-                    this.remove(id);
+                    this.remove(parsedId);
                 } else {
                     this.save();
                 }
             }
+        },
+
+        emptyCart() {
+            this.items = [];
+            this.save();
         },
 
         updateCount() {
@@ -119,27 +134,44 @@ document.addEventListener('DOMContentLoaded', () => {
                 subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
                 totalEl.textContent = `$${subtotal.toFixed(2)}`;
 
-                // Re-attach listeners
-                this.attachListeners();
             }
         },
 
+        init() {
+            this.updateCount();
+            this.render();
+            this.attachListeners();
+        },
+
         attachListeners() {
-            document.querySelectorAll('.qty-btn.plus').forEach(btn => {
-                btn.onclick = () => this.updateQuantity(btn.dataset.id, 1);
+            const cartItemsContainer = document.querySelector('.cart-items');
+            if (!cartItemsContainer) return;
+
+            cartItemsContainer.addEventListener('click', (e) => {
+                const target = e.target.closest('.qty-btn, .remove-btn');
+                if (!target) return;
+
+                const id = target.dataset.id;
+                if (target.classList.contains('plus')) {
+                    this.increment(id);
+                } else if (target.classList.contains('minus')) {
+                    this.decrement(id);
+                } else if (target.classList.contains('remove-btn')) {
+                    this.remove(id);
+                }
             });
-            document.querySelectorAll('.qty-btn.minus').forEach(btn => {
-                btn.onclick = () => this.updateQuantity(btn.dataset.id, -1);
-            });
-            document.querySelectorAll('.remove-btn').forEach(btn => {
-                btn.onclick = () => this.remove(btn.dataset.id);
-            });
+
+            const emptyCartBtn = document.querySelector('.empty-cart-btn');
+            if (emptyCartBtn) {
+                emptyCartBtn.addEventListener('click', () => this.emptyCart());
+            }
         }
     };
 
     // Initialize Cart
-    cart.updateCount();
-    cart.render();
+    cart.init();
+
+    let allProducts = []; // To store all products for searching
 
     // Load Products
     async function loadProducts() {
@@ -152,23 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const products = await response.json();
-
-            productGrid.innerHTML = products.map(product => `
-                <article class="product-card" data-id="${product.id}">
-                    <div class="product-image">
-                        <img class="product-img" src="${product.image_url}" alt="${product.name}">
-                        <button class="add-to-cart-btn" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">${product.category}</span>
-                        <h3 class="product-title">${product.name}</h3>
-                        <p class="product-price">$${product.price.toFixed(2)}</p>
-                    </div>
-                </article>
-            `).join('');
-
-            // Re-attach listeners for the new buttons
-            attachAddToCartListeners();
+            allProducts = products;
+            renderProducts(allProducts);
 
         } catch (error) {
             console.error("Could not load products:", error);
@@ -206,6 +223,51 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(() => cartBtn.style.transform = 'scale(1)', 200);
                 }
             });
+        });
+    }
+
+    function renderProducts(products) {
+        const productGrid = document.querySelector('.product-grid');
+        if (!productGrid) return;
+
+        if (products.length === 0) {
+            productGrid.innerHTML = '<p>No products found matching your search.</p>';
+            return;
+        }
+
+        productGrid.innerHTML = products.map(product => `
+            <article class="product-card" data-id="${product.id}">
+                <div class="product-image">
+                    <img class="product-img" src="${product.image_url}" alt="${product.name}">
+                    <button class="add-to-cart-btn" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="product-info">
+                    <span class="product-category">${product.category}</span>
+                    <h3 class="product-title">${product.name}</h3>
+                    <p class="product-price">$${product.price.toFixed(2)}</p>
+                </div>
+            </article>
+        `).join('');
+
+        // Re-attach listeners for the new buttons
+        attachAddToCartListeners();
+    }
+
+    // Search Logic
+    const searchInput = document.getElementById('search-input');
+    const searchForm = document.getElementById('search-form');
+
+    if (searchForm) {
+        searchForm.addEventListener('submit', e => e.preventDefault());
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredProducts = allProducts.filter(product =>
+                product.name.toLowerCase().includes(searchTerm)
+            );
+            renderProducts(filteredProducts);
         });
     }
 
