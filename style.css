@@ -71,6 +71,18 @@ img {
     transform: translateY(-2px);
 }
 
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--text-muted);
+}
+
+.btn-secondary:hover {
+    background-color: var(--text-muted);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
 /* Header */
 .header {
     position: fixed;
@@ -179,6 +191,32 @@ img {
     color: var(--white);
     font-size: 24px;
     cursor: pointer;
+}
+
+/* Search Form */
+.search-form {
+    position: relative;
+}
+
+.search-form input {
+    background-color: var(--secondary-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: var(--white);
+    padding: 8px 15px;
+    width: 200px;
+    transition: var(--transition);
+    font-family: var(--font-main);
+}
+
+.search-form input::placeholder {
+    color: var(--text-muted);
+}
+
+.search-form input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    width: 250px;
 }
 
 /* Hero */
@@ -982,6 +1020,11 @@ img {
 .checkout-btn {
     width: 100%;
     margin-top: 20px;
+}
+
+.empty-cart-btn {
+    width: 100%;
+    margin-top: 10px;
 }
 
 @media (max-width: 768px) {
