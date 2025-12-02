@@ -1,0 +1,422 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Noise-Canceling Headphones",
+    "price": 299.99,
+    "category": "Electronics",
+    "image_url": "https://placehold.co/600x400?text=Wireless+Headphones"
+  },
+  {
+    "id": 2,
+    "name": "4K Ultra HD Smart TV 55\"",
+    "price": 499.00,
+    "category": "Electronics",
+    "image_url": "https://placehold.co/600x400?text=Smart+TV"
+  },
+  {
+    "id": 3,
+    "name": "Smartphone Pro Max 256GB",
+    "price": 1099.00,
+    "category": "Electronics",
+    "image_url": "https://placehold.co/600x400?text=Smartphone"
+  },
+  {
+    "id": 4,
+    "name": "Gaming Laptop 15\"",
+    "price": 1299.99,
+    "category": "Electronics",
+    "image_url": "https://placehold.co/600x400?text=Gaming+Laptop"
+  },
+  {
+    "id": 5,
+    "name": "Mechanical Gaming Keyboard",
+    "price": 89.99,
+    "category": "Electronics",
+    "image_url": "https://placehold.co/600x400?text=Mechanical+Keyboard"
+  },
+  {
+    "id": 6,
+    "name": "Wireless Ergonomic Mouse",
+    "price": 49.99,
+    "category": "Electronics",
+    "image_url": "https://placehold.co/600x400?text=Wireless+Mouse"
+  },
+  {
+    "id": 7,
+    "name": "Smart Watch Series 7",
+    "price": 399.00,
+    "category": "Electronics",
+    "image_url": "https://placehold.co/600x400?text=Smart+Watch"
+  },
+  {
+    "id": 8,
+    "name": "Portable Bluetooth Speaker",
+    "price": 59.99,
+    "category": "Electronics",
+    "image_url": "https://placehold.co/600x400?text=Bluetooth+Speaker"
+  },
+  {
+    "id": 9,
+    "name": "Drone with 4K Camera",
+    "price": 799.00,
+    "category": "Electronics",
+    "image_url": "https://placehold.co/600x400?text=Drone"
+  },
+  {
+    "id": 10,
+    "name": "Tablet Air 10.9\"",
+    "price": 599.00,
+    "category": "Electronics",
+    "image_url": "https://placehold.co/600x400?text=Tablet"
+  },
+  {
+    "id": 11,
+    "name": "Men's Cotton Crew T-Shirt",
+    "price": 19.99,
+    "category": "Clothing",
+    "image_url": "https://placehold.co/600x400?text=Cotton+T-Shirt"
+  },
+  {
+    "id": 12,
+    "name": "Women's Denim Jacket",
+    "price": 59.99,
+    "category": "Clothing",
+    "image_url": "https://placehold.co/600x400?text=Denim+Jacket"
+  },
+  {
+    "id": 13,
+    "name": "Running Sneakers",
+    "price": 89.99,
+    "category": "Clothing",
+    "image_url": "https://placehold.co/600x400?text=Running+Sneakers"
+  },
+  {
+    "id": 14,
+    "name": "Leather Bi-Fold Wallet",
+    "price": 35.00,
+    "category": "Clothing",
+    "image_url": "https://placehold.co/600x400?text=Leather+Wallet"
+  },
+  {
+    "id": 15,
+    "name": "Classic Aviator Sunglasses",
+    "price": 150.00,
+    "category": "Clothing",
+    "image_url": "https://placehold.co/600x400?text=Sunglasses"
+  },
+  {
+    "id": 16,
+    "name": "Summer Floral Dress",
+    "price": 45.00,
+    "category": "Clothing",
+    "image_url": "https://placehold.co/600x400?text=Floral+Dress"
+  },
+  {
+    "id": 17,
+    "name": "Slim Fit Chino Pants",
+    "price": 39.99,
+    "category": "Clothing",
+    "image_url": "https://placehold.co/600x400?text=Chino+Pants"
+  },
+  {
+    "id": 18,
+    "name": "Wool Blend Scarf",
+    "price": 25.00,
+    "category": "Clothing",
+    "image_url": "https://placehold.co/600x400?text=Wool+Scarf"
+  },
+  {
+    "id": 19,
+    "name": "Canvas Backpack",
+    "price": 49.99,
+    "category": "Clothing",
+    "image_url": "https://placehold.co/600x400?text=Backpack"
+  },
+  {
+    "id": 20,
+    "name": "Waterproof Hiking Boots",
+    "price": 110.00,
+    "category": "Clothing",
+    "image_url": "https://placehold.co/600x400?text=Hiking+Boots"
+  },
+  {
+    "id": 21,
+    "name": "Stainless Steel Chef Knife",
+    "price": 45.00,
+    "category": "Home & Kitchen",
+    "image_url": "https://placehold.co/600x400?text=Chef+Knife"
+  },
+  {
+    "id": 22,
+    "name": "Ceramic Non-Stick Frying Pan",
+    "price": 35.00,
+    "category": "Home & Kitchen",
+    "image_url": "https://placehold.co/600x400?text=Frying+Pan"
+  },
+  {
+    "id": 23,
+    "name": "Robot Vacuum Cleaner",
+    "price": 249.00,
+    "category": "Home & Kitchen",
+    "image_url": "https://placehold.co/600x400?text=Robot+Vacuum"
+  },
+  {
+    "id": 24,
+    "name": "Egyptian Cotton Sheet Set",
+    "price": 89.00,
+    "category": "Home & Kitchen",
+    "image_url": "https://placehold.co/600x400?text=Sheet+Set"
+  },
+  {
+    "id": 25,
+    "name": "Memory Foam Pillow",
+    "price": 29.99,
+    "category": "Home & Kitchen",
+    "image_url": "https://placehold.co/600x400?text=Foam+Pillow"
+  },
+  {
+    "id": 26,
+    "name": "Digital Air Fryer",
+    "price": 79.99,
+    "category": "Home & Kitchen",
+    "image_url": "https://placehold.co/600x400?text=Air+Fryer"
+  },
+  {
+    "id": 27,
+    "name": "Espresso Machine",
+    "price": 199.00,
+    "category": "Home & Kitchen",
+    "image_url": "https://placehold.co/600x400?text=Espresso+Machine"
+  },
+  {
+    "id": 28,
+    "name": "Bamboo Cutting Board",
+    "price": 19.99,
+    "category": "Home & Kitchen",
+    "image_url": "https://placehold.co/600x400?text=Cutting+Board"
+  },
+  {
+    "id": 29,
+    "name": "Glass Food Storage Containers",
+    "price": 39.99,
+    "category": "Home & Kitchen",
+    "image_url": "https://placehold.co/600x400?text=Storage+Containers"
+  },
+  {
+    "id": 30,
+    "name": "Modern LED Floor Lamp",
+    "price": 65.00,
+    "category": "Home & Kitchen",
+    "image_url": "https://placehold.co/600x400?text=Floor+Lamp"
+  },
+  {
+    "id": 31,
+    "name": "Vitamin C Serum",
+    "price": 24.99,
+    "category": "Beauty",
+    "image_url": "https://placehold.co/600x400?text=Vitamin+C+Serum"
+  },
+  {
+    "id": 32,
+    "name": "Daily Moisturizing Cream",
+    "price": 18.50,
+    "category": "Beauty",
+    "image_url": "https://placehold.co/600x400?text=Moisturizer"
+  },
+  {
+    "id": 33,
+    "name": "Electric Toothbrush",
+    "price": 59.99,
+    "category": "Beauty",
+    "image_url": "https://placehold.co/600x400?text=Electric+Toothbrush"
+  },
+  {
+    "id": 34,
+    "name": "Organic Lavender Shampoo",
+    "price": 15.00,
+    "category": "Beauty",
+    "image_url": "https://placehold.co/600x400?text=Shampoo"
+  },
+  {
+    "id": 35,
+    "name": "Matte Lipstick Set",
+    "price": 22.00,
+    "category": "Beauty",
+    "image_url": "https://placehold.co/600x400?text=Lipstick+Set"
+  },
+  {
+    "id": 36,
+    "name": "Charcoal Face Mask",
+    "price": 12.99,
+    "category": "Beauty",
+    "image_url": "https://placehold.co/600x400?text=Face+Mask"
+  },
+  {
+    "id": 37,
+    "name": "Hair Dryer Professional",
+    "price": 45.00,
+    "category": "Beauty",
+    "image_url": "https://placehold.co/600x400?text=Hair+Dryer"
+  },
+  {
+    "id": 38,
+    "name": "Men's Grooming Kit",
+    "price": 35.00,
+    "category": "Beauty",
+    "image_url": "https://placehold.co/600x400?text=Grooming+Kit"
+  },
+  {
+    "id": 39,
+    "name": "Eau de Parfum 50ml",
+    "price": 75.00,
+    "category": "Beauty",
+    "image_url": "https://placehold.co/600x400?text=Perfume"
+  },
+  {
+    "id": 40,
+    "name": "Sunscreen SPF 50",
+    "price": 16.00,
+    "category": "Beauty",
+    "image_url": "https://placehold.co/600x400?text=Sunscreen"
+  },
+  {
+    "id": 41,
+    "name": "Yoga Mat Extra Thick",
+    "price": 25.00,
+    "category": "Sports",
+    "image_url": "https://placehold.co/600x400?text=Yoga+Mat"
+  },
+  {
+    "id": 42,
+    "name": "Adjustable Dumbbell Set",
+    "price": 199.00,
+    "category": "Sports",
+    "image_url": "https://placehold.co/600x400?text=Dumbbells"
+  },
+  {
+    "id": 43,
+    "name": "Camping Tent 4-Person",
+    "price": 129.00,
+    "category": "Sports",
+    "image_url": "https://placehold.co/600x400?text=Camping+Tent"
+  },
+  {
+    "id": 44,
+    "name": "Stainless Steel Water Bottle",
+    "price": 22.00,
+    "category": "Sports",
+    "image_url": "https://placehold.co/600x400?text=Water+Bottle"
+  },
+  {
+    "id": 45,
+    "name": "Tennis Racket Pro",
+    "price": 110.00,
+    "category": "Sports",
+    "image_url": "https://placehold.co/600x400?text=Tennis+Racket"
+  },
+  {
+    "id": 46,
+    "name": "Sleeping Bag 0-Degree",
+    "price": 85.00,
+    "category": "Sports",
+    "image_url": "https://placehold.co/600x400?text=Sleeping+Bag"
+  },
+  {
+    "id": 47,
+    "name": "Mountain Bike Helmet",
+    "price": 45.00,
+    "category": "Sports",
+    "image_url": "https://placehold.co/600x400?text=Bike+Helmet"
+  },
+  {
+    "id": 48,
+    "name": "Resistance Bands Set",
+    "price": 15.99,
+    "category": "Sports",
+    "image_url": "https://placehold.co/600x400?text=Resistance+Bands"
+  },
+  {
+    "id": 49,
+    "name": "Soccer Ball Size 5",
+    "price": 29.99,
+    "category": "Sports",
+    "image_url": "https://placehold.co/600x400?text=Soccer+Ball"
+  },
+  {
+    "id": 50,
+    "name": "Hiking Backpack 40L",
+    "price": 79.99,
+    "category": "Sports",
+    "image_url": "https://placehold.co/600x400?text=Hiking+Backpack"
+  },
+  {
+    "id": 51,
+    "name": "Hardcover Notebook",
+    "price": 14.00,
+    "category": "Hobbies",
+    "image_url": "https://placehold.co/600x400?text=Notebook"
+  },
+  {
+    "id": 52,
+    "name": "Gel Pen Set 12-Pack",
+    "price": 10.00,
+    "category": "Hobbies",
+    "image_url": "https://placehold.co/600x400?text=Gel+Pens"
+  },
+  {
+    "id": 53,
+    "name": "Sci-Fi Novel Bestseller",
+    "price": 19.99,
+    "category": "Hobbies",
+    "image_url": "https://placehold.co/600x400?text=Sci-Fi+Novel"
+  },
+  {
+    "id": 54,
+    "name": "Gourmet Cookbook",
+    "price": 24.99,
+    "category": "Hobbies",
+    "image_url": "https://placehold.co/600x400?text=Cookbook"
+  },
+  {
+    "id": 55,
+    "name": "Art History Book",
+    "price": 55.00,
+    "category": "Hobbies",
+    "image_url": "https://placehold.co/600x400?text=Art+Book"
+  },
+  {
+    "id": 56,
+    "name": "Board Game Strategy",
+    "price": 45.00,
+    "category": "Hobbies",
+    "image_url": "https://placehold.co/600x400?text=Board+Game"
+  },
+  {
+    "id": 57,
+    "name": "Acrylic Paint Set",
+    "price": 18.99,
+    "category": "Hobbies",
+    "image_url": "https://placehold.co/600x400?text=Paint+Set"
+  },
+  {
+    "id": 58,
+    "name": "Acoustic Guitar for Beginners",
+    "price": 120.00,
+    "category": "Hobbies",
+    "image_url": "https://placehold.co/600x400?text=Acoustic+Guitar"
+  },
+  {
+    "id": 59,
+    "name": "Puzzle 1000 Pieces",
+    "price": 15.00,
+    "category": "Hobbies",
+    "image_url": "https://placehold.co/600x400?text=Puzzle"
+  },
+  {
+    "id": 60,
+    "name": "Knitting Kit",
+    "price": 29.99,
+    "category": "Hobbies",
+    "image_url": "https://placehold.co/600x400?text=Knitting+Kit"
+  }
+]
