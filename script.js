@@ -141,43 +141,74 @@ document.addEventListener('DOMContentLoaded', () => {
     cart.updateCount();
     cart.render();
 
-    // Add to Cart Interaction
-    const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+    // Load Products
+    async function loadProducts() {
+        const productGrid = document.querySelector('.product-grid');
+        if (!productGrid) return;
 
-    addToCartBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            // Get product data
-            const card = btn.closest('.product-card');
-            const product = {
-                id: card.querySelector('.product-title').textContent.replace(/\s+/g, '-').toLowerCase(), // Simple ID generation
-                title: card.querySelector('.product-title').textContent,
-                price: parseFloat(card.querySelector('.product-price').textContent.replace('$', '')),
-                image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80' // Placeholder for now as actual images are background divs
-            };
-
-            // Add to cart
-            cart.add(product);
-
-            // Animation effect
-            const icon = btn.querySelector('i');
-            icon.classList.remove('fa-plus');
-            icon.classList.add('fa-check');
-
-            setTimeout(() => {
-                icon.classList.remove('fa-check');
-                icon.classList.add('fa-plus');
-            }, 1500);
-
-            // Shake cart icon
-            const cartBtn = document.querySelector('.icon-btn[aria-label="Cart"]');
-            if (cartBtn) {
-                cartBtn.style.transform = 'scale(1.2)';
-                setTimeout(() => {
-                    cartBtn.style.transform = 'scale(1)';
-                }, 200);
+        try {
+            const response = await fetch('produts.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
+            const products = await response.json();
+
+            productGrid.innerHTML = products.map(product => `
+                <article class="product-card" data-id="${product.id}">
+                    <div class="product-image">
+                        <img class="product-img" src="${product.image_url}" alt="${product.name}">
+                        <button class="add-to-cart-btn" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">${product.category}</span>
+                        <h3 class="product-title">${product.name}</h3>
+                        <p class="product-price">$${product.price.toFixed(2)}</p>
+                    </div>
+                </article>
+            `).join('');
+
+            // Re-attach listeners for the new buttons
+            attachAddToCartListeners();
+
+        } catch (error) {
+            console.error("Could not load products:", error);
+            productGrid.innerHTML = '<p>Could not load products. Please try again later.</p>';
+        }
+    }
+
+    function attachAddToCartListeners() {
+        const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+        addToCartBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const card = btn.closest('.product-card');
+                const product = {
+                    id: parseInt(card.dataset.id),
+                    title: card.querySelector('.product-title').textContent,
+                    price: parseFloat(card.querySelector('.product-price').textContent.replace('$', '')),
+                    image: card.querySelector('.product-img').src
+                };
+
+                cart.add(product);
+
+                const icon = btn.querySelector('i');
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-check');
+                setTimeout(() => {
+                    icon.classList.remove('fa-check');
+                    icon.classList.add('fa-plus');
+                }, 1500);
+
+                const cartBtn = document.querySelector('.icon-btn[aria-label="Cart"]');
+                if (cartBtn) {
+                    cartBtn.style.transform = 'scale(1.2)';
+                    setTimeout(() => cartBtn.style.transform = 'scale(1)', 200);
+                }
+            });
         });
-    });
+    }
+
+    // Initial Load
+    loadProducts();
 });
