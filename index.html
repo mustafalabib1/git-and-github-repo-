@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe | Premium E-Commerce</title>
+    <meta name="description"
+        content="Experience the finest quality products with Luxe. Shop our exclusive collection today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">LUXE.</a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#products" class="nav-link">Shop</a></li>
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#newsletter" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="icon-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+                <a href="#hero" class="icon-btn" aria-label="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="#hero" class="icon-btn" aria-label="Account"><i class="fas fa-user"></i></a>
+                <button class="mobile-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="container hero-content">
+                <span class="hero-subtitle">New Collection 2024</span>
+                <h1 class="hero-title">Elevate Your <br> Lifestyle</h1>
+                <p class="hero-description">Discover our curated selection of premium goods designed for
+                    the modern
+                    connoisseur.</p>
+                <a href="#products" class="btn btn-primary">Shop Collection</a>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Free Shipping</h3>
+                    <p>On all orders over $100</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-undo"></i>
+                    <h3>30 Days Return</h3>
+                    <p>Money back guarantee</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Dedicated support team</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure Payment</h3>
+                    <p>100% secure checkout</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Products</h2>
+                    <p class="section-subtitle">Handpicked for you</p>
+                </div>
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img class="product-img" src="https://picsum.photos/seed/watch/300/300"
+                                alt="Minimalist Watch">
+                            <button class="add-to-cart-btn"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Accessories</span>
+                            <h3 class="product-title">Minimalist Watch</h3>
+                            <p class="product-price">$199.00</p>
+                        </div>
+                    </article>
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img class="product-img" src="https://picsum.photos/seed/headphones/300/300"
+                                alt="Premium Headphones">
+                            <button class="add-to-cart-btn"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Audio</span>
+                            <h3 class="product-title">Premium Headphones</h3>
+                            <p class="product-price">$299.00</p>
+                        </div>
+                    </article>
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img class="product-img" src="https://picsum.photos/seed/bag/300/300" alt="Leather Bag">
+                            <button class="add-to-cart-btn"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Lifestyle</span>
+                            <h3 class="product-title">Leather Bag</h3>
+                            <p class="product-price">$149.00</p>
+                        </div>
+                    </article>
+                    <!-- Product 4 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img class="product-img" src="https://picsum.photos/seed/speaker/300/300"
+                                alt="Smart Speaker">
+                            <button class="add-to-cart-btn"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Tech</span>
+                            <h3 class="product-title">Smart Speaker</h3>
+                            <p class="product-price">$89.00</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter" class="newsletter">
+            <div class="container newsletter-content">
+                <h2 class="newsletter-title">Join Our Newsletter</h2>
+                <p class="newsletter-desc">Subscribe to get special offers, free giveaways, and
+                    once-in-a-lifetime
+                    deals.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">LUXE.</a>
+                <p>Redefining luxury for the modern era. Quality, style, and elegance in every detail.
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Sale</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Luxe Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
